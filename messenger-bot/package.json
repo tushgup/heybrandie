@@ -1,0 +1,20 @@
+{
+  "name": "brandie-bot",
+  "version": "0.0.1",
+  "description": "Personal brand kickstarter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tushar Gupta",
+  "license": "MIT",
+  "homepage": "https://github.com/sgaurav/fb-messenger-echo-bot#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "body-parser": "~1.15.0",
+    "compression": "~1.6.1",
+    "express": "~4.13.4",
+    "node-fetch": "^1.7.3",
+    "request": "~2.71.0"
+  }
+}
