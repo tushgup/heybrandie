@@ -52,6 +52,24 @@
     <meta name="twitter:card" content="summary">
   </head>
   <body>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId            : '539562686390039',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v2.11'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
     <header class="header">
       <div class="container-lrg">
         <div class="col-12 center">
@@ -70,11 +88,25 @@
           <h2 class="paragraph">
             A chatbot designed to help students and young graduates kickstart their online professional presence through personalised insights.<br>
           </h2>
+          <!--
           <div class="ctas">
             <a class="ctas-button" target="_blank" href="https://m.me/heybrandie">
               Get Started
             </a>
           </div>
+        -->
+        <div class="fb-messengermessageus"
+          messenger_app_id="539562686390039"
+          page_id="302154760282045"
+          color="white"
+          size="xlarge" style="margin-top: 10px;">
+        </div>
+        <div>
+          <br>
+          <h3>
+          <a href="https://github.com/tushgup/heybrandie" target="_blank" style="color: #fff; margin-top: 4px; text-decoration: none;">View on GitHub</a>
+          </h3>
+        </div>
         </div>
         <div class="col-6 sidedevices">
         <div>
@@ -201,11 +233,16 @@
           <h5 class="heading">
             Start building a strong personal brand today.
           </h5>
-          <div class="ctas">
-            <a class="ctas-button" target="_blank" href="https://m.me/heybrandie">
-              Message Now
-            </a>
+          <div class="fb-messengermessageus"
+            messenger_app_id="539562686390039"
+            page_id="302154760282045"
+            color="white"
+            size="xlarge" style="margin-top: 10px;">
           </div>
+          <br><br>
+          <h4>
+          <a href="https://github.com/tushgup/heybrandie" target="_blank" style="color: #fff; margin-top: 4px; text-decoration: none;">View on GitHub</a>
+        </h4>
         </div>
       </div>
       <div class="container-sml footer-nav">
