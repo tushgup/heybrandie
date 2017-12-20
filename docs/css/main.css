@@ -24,6 +24,9 @@ body {
   font-size: 50px;
   line-height: 68px;
 }
+hr1 {
+	border-bottom: 1px solid rgba(0,0,0,.1)
+}
 @media (max-width: 900px) {
 .heading {
     font-size: 32px;
@@ -42,7 +45,7 @@ body {
   }
 }
 .paragraph {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 32px;
   font-weight: 400;
 }
@@ -278,6 +281,15 @@ p.paragraph {
 }.feature3 {
 	padding: 90px 0;
 	border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.padd {
+	padding: 10px;
+}
+.divpad {
+	margin-top: 50px;
+}
+.feature3 a {
+	display: inline-block;
 }
 .feature3 .emoji {
 	font-size: 55px;
