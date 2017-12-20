@@ -959,8 +959,8 @@ else if(payload== 'twitter_no')
 		}
 	};
 	callSendAPI(sender_psid, response).then(() => {
-		return callSendAPI(sender_psid,response1).then(() => {
-			return callSendAPI(sender_psid, response2);
+		return callSendAPI(sender_psid,response2).then(() => {
+			return callSendAPI(sender_psid, response1);
 		});
 	});
 }
