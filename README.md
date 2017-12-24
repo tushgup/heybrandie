@@ -1,4 +1,4 @@
-![Logo](docs/img/Brandie_Logo_PNG.png)
+![Logo](docs/img/logo.png)
 # Brandie
 A Facebook Messenger bot which helps university students and fresh graduates kickstart their personal branding.
 
