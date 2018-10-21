@@ -5,7 +5,6 @@ Drop-in replacement for Nodes `http` and `https` that automatically follows redi
 [![npm version](https://badge.fury.io/js/follow-redirects.svg)](https://www.npmjs.com/package/follow-redirects)
 [![Build Status](https://travis-ci.org/olalonde/follow-redirects.svg?branch=master)](https://travis-ci.org/olalonde/follow-redirects)
 [![Coverage Status](https://coveralls.io/repos/olalonde/follow-redirects/badge.svg?branch=master)](https://coveralls.io/r/olalonde/follow-redirects?branch=master)
-[![Code Climate](https://codeclimate.com/github/olalonde/follow-redirects/badges/gpa.svg)](https://codeclimate.com/github/olalonde/follow-redirects)
 [![Dependency Status](https://david-dm.org/olalonde/follow-redirects.svg)](https://david-dm.org/olalonde/follow-redirects)
 [![devDependency Status](https://david-dm.org/olalonde/follow-redirects/dev-status.svg)](https://david-dm.org/olalonde/follow-redirects#info=devDependencies)
 
@@ -48,11 +47,14 @@ Global options are set directly on the `follow-redirects` module:
 ```javascript
 var followRedirects = require('follow-redirects');
 followRedirects.maxRedirects = 10;
+followRedirects.maxBodyLength = 20 * 1024 * 1024; // 20 MB
 ```
 
 The following global options are supported:
 
 - `maxRedirects` (default: `21`) – sets the maximum number of allowed redirects; if exceeded, an error will be emitted.
+
+- `maxBodyLength` (default: 10MB) – sets the maximum size of the request body; if exceeded, an error will be emitted.
 
 
 ### Per-request options
@@ -73,8 +75,28 @@ the following per-request options are supported:
 
 - `maxRedirects` (default: `21`) – sets the maximum number of allowed redirects; if exceeded, an error will be emitted.
 
+- `maxBodyLength` (default: 10MB) – sets the maximum size of the request body; if exceeded, an error will be emitted.
+
 - `agents` (default: `undefined`) – sets the `agent` option per protocol, since HTTP and HTTPS use different agents. Example value: `{ http: new http.Agent(), https: new https.Agent() }`
 
+- `trackRedirects` (default: `false`) – whether to store the redirected response details into the `redirects` array on the response object.
+
+
+### Advanced usage
+By default, `follow-redirects` will use the Node.js default implementations
+of [`http`](https://nodejs.org/api/http.html)
+and [`https`](https://nodejs.org/api/https.html).
+To enable features such as caching and/or intermediate request tracking,
+you might instead want to wrap `follow-redirects` around custom protocol implementations:
+
+```javascript
+var followRedirects = require('follow-redirects').wrap({
+  http: require('your-custom-http'),
+  https: require('your-custom-https'),
+});
+```
+
+Such custom protocols only need an implementation of the `request` method.
 
 ## Browserify Usage
 
